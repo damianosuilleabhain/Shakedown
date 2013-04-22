@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SHDShakedown.h"
 
 @interface ViewController ()
 
@@ -26,4 +27,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logIssue:(id)sender {
+    [[SHDShakedown sharedShakedown] displayReporter];
+    
+}
 @end
