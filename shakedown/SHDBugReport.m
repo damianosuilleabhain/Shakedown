@@ -32,13 +32,17 @@
 }
 
 - (NSDictionary *)deviceDictionary {
+    NSString * identifierForVendor = nil;
+    if ([self.device respondsToSelector:@selector(identifierForVendor)]) {
+        identifierForVendor = [self.device.identifierForVendor UUIDString];
+    }
     NSDictionary *dictionary = @{
                                  @"Name": self.device.name,
                                  @"System Name": self.device.systemName,
                                  @"iOS Version": self.device.systemVersion,
                                  @"model": self.device.model,
                                  @"UI Idiom": self.device.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? @"UIUserInterfaceIdiomPhone" : @"UIUserInterfaceIdiomPad",
-                                 @"IDFV": [self.device.identifierForVendor UUIDString]
+                                 @"IDFV": identifierForVendor ?: @""
                                  };
     return dictionary;
 }

@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DFF296017253285003CA2AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF295F17253285003CA2AB /* UIKit.framework */; };
+		3DFF296217253285003CA2AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF296117253285003CA2AB /* Foundation.framework */; };
+		3DFF296417253285003CA2AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF296317253285003CA2AB /* CoreGraphics.framework */; };
+		3DFF296A17253285003CA2AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF296817253285003CA2AB /* InfoPlist.strings */; };
+		3DFF296C17253285003CA2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF296B17253285003CA2AB /* main.m */; };
+		3DFF297017253285003CA2AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF296F17253285003CA2AB /* AppDelegate.m */; };
+		3DFF297217253285003CA2AB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF297117253285003CA2AB /* Default.png */; };
+		3DFF297417253285003CA2AB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF297317253285003CA2AB /* Default@2x.png */; };
+		3DFF297617253285003CA2AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF297517253285003CA2AB /* Default-568h@2x.png */; };
+		3DFF297917253285003CA2AB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF297717253285003CA2AB /* MainStoryboard_iPhone.storyboard */; };
+		3DFF297C17253285003CA2AB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF297A17253285003CA2AB /* MainStoryboard_iPad.storyboard */; };
+		3DFF297F17253285003CA2AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF297E17253285003CA2AB /* ViewController.m */; };
+		3DFF298717253285003CA2AB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF298617253285003CA2AB /* SenTestingKit.framework */; };
+		3DFF298817253285003CA2AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF295F17253285003CA2AB /* UIKit.framework */; };
+		3DFF298917253285003CA2AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF296117253285003CA2AB /* Foundation.framework */; };
+		3DFF299117253285003CA2AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF298F17253285003CA2AB /* InfoPlist.strings */; };
+		3DFF299417253285003CA2AB /* ShakedownExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF299317253285003CA2AB /* ShakedownExampleTests.m */; };
+		3DFF29C2172532B3003CA2AB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DFF299F172532B3003CA2AB /* README.md */; };
+		3DFF29C3172532B3003CA2AB /* SHDBugReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29A1172532B3003CA2AB /* SHDBugReport.m */; };
+		3DFF29C4172532B3003CA2AB /* SHDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29A3172532B3003CA2AB /* SHDButton.m */; };
+		3DFF29C5172532B3003CA2AB /* SHDDescriptiveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */; };
+		3DFF29C6172532B3003CA2AB /* SHDListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29A8172532B3003CA2AB /* SHDListCell.m */; };
+		3DFF29C7172532B3003CA2AB /* SHDMultipleSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */; };
+		3DFF29C8172532B3003CA2AB /* SHDReporterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29AC172532B3003CA2AB /* SHDReporterView.m */; };
+		3DFF29C9172532B3003CA2AB /* SHDReporterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */; };
+		3DFF29CA172532B3003CA2AB /* SHDScreenshotsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */; };
+		3DFF29CB172532B3003CA2AB /* SHDShakedown+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */; };
+		3DFF29CC172532B3003CA2AB /* SHDShakedown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29B4172532B3003CA2AB /* SHDShakedown.m */; };
+		3DFF29CD172532B3003CA2AB /* SHDShakedownEmailReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29B6172532B3003CA2AB /* SHDShakedownEmailReporter.m */; };
+		3DFF29CE172532B3003CA2AB /* SHDShakedownReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29B8172532B3003CA2AB /* SHDShakedownReporter.m */; };
+		3DFF29CF172532B3003CA2AB /* SHDShakedownYouTrackReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29BA172532B3003CA2AB /* SHDShakedownYouTrackReporter.m */; };
+		3DFF29D0172532B3003CA2AB /* SHDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29BC172532B3003CA2AB /* SHDTextFieldCell.m */; };
+		3DFF29D1172532B3003CA2AB /* SHDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29BE172532B3003CA2AB /* SHDTextViewCell.m */; };
+		3DFF29D2172532B3003CA2AB /* UIWindow+SHDShakeListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29C0172532B3003CA2AB /* UIWindow+SHDShakeListener.m */; };
+		3DFF29D417253532003CA2AB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF29D317253532003CA2AB /* MessageUI.framework */; };
+		3DFF29D717253887003CA2AB /* SHDShakedownRedmineReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF29D617253886003CA2AB /* SHDShakedownRedmineReporter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DFF298A17253285003CA2AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DFF295417253285003CA2AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DFF295B17253285003CA2AB;
+			remoteInfo = ShakedownExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DFF295C17253285003CA2AB /* ShakedownExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakedownExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFF295F17253285003CA2AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3DFF296117253285003CA2AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3DFF296317253285003CA2AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3DFF296717253285003CA2AB /* ShakedownExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShakedownExample-Info.plist"; sourceTree = "<group>"; };
+		3DFF296917253285003CA2AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3DFF296B17253285003CA2AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3DFF296D17253285003CA2AB /* ShakedownExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShakedownExample-Prefix.pch"; sourceTree = "<group>"; };
+		3DFF296E17253285003CA2AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3DFF296F17253285003CA2AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3DFF297117253285003CA2AB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3DFF297317253285003CA2AB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3DFF297517253285003CA2AB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3DFF297817253285003CA2AB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		3DFF297B17253285003CA2AB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		3DFF297D17253285003CA2AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3DFF297E17253285003CA2AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3DFF298517253285003CA2AB /* ShakedownExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShakedownExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFF298617253285003CA2AB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3DFF298E17253285003CA2AB /* ShakedownExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShakedownExampleTests-Info.plist"; sourceTree = "<group>"; };
+		3DFF299017253285003CA2AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3DFF299217253285003CA2AB /* ShakedownExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShakedownExampleTests.h; sourceTree = "<group>"; };
+		3DFF299317253285003CA2AB /* ShakedownExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShakedownExampleTests.m; sourceTree = "<group>"; };
+		3DFF299F172532B3003CA2AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		3DFF29A0172532B3003CA2AB /* SHDBugReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDBugReport.h; sourceTree = "<group>"; };
+		3DFF29A1172532B3003CA2AB /* SHDBugReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDBugReport.m; sourceTree = "<group>"; };
+		3DFF29A2172532B3003CA2AB /* SHDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDButton.h; sourceTree = "<group>"; };
+		3DFF29A3172532B3003CA2AB /* SHDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDButton.m; sourceTree = "<group>"; };
+		3DFF29A4172532B3003CA2AB /* SHDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDConstants.h; sourceTree = "<group>"; };
+		3DFF29A5172532B3003CA2AB /* SHDDescriptiveInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDDescriptiveInfoCell.h; sourceTree = "<group>"; };
+		3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDDescriptiveInfoCell.m; sourceTree = "<group>"; };
+		3DFF29A7172532B3003CA2AB /* SHDListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDListCell.h; sourceTree = "<group>"; };
+		3DFF29A8172532B3003CA2AB /* SHDListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDListCell.m; sourceTree = "<group>"; };
+		3DFF29A9172532B3003CA2AB /* SHDMultipleSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDMultipleSelectionCell.h; sourceTree = "<group>"; };
+		3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDMultipleSelectionCell.m; sourceTree = "<group>"; };
+		3DFF29AB172532B3003CA2AB /* SHDReporterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDReporterView.h; sourceTree = "<group>"; };
+		3DFF29AC172532B3003CA2AB /* SHDReporterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDReporterView.m; sourceTree = "<group>"; };
+		3DFF29AD172532B3003CA2AB /* SHDReporterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDReporterViewController.h; sourceTree = "<group>"; };
+		3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDReporterViewController.m; sourceTree = "<group>"; };
+		3DFF29AF172532B3003CA2AB /* SHDScreenshotsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDScreenshotsCell.h; sourceTree = "<group>"; };
+		3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDScreenshotsCell.m; sourceTree = "<group>"; };
+		3DFF29B1172532B3003CA2AB /* SHDShakedown+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHDShakedown+Private.h"; sourceTree = "<group>"; };
+		3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHDShakedown+Private.m"; sourceTree = "<group>"; };
+		3DFF29B3172532B3003CA2AB /* SHDShakedown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDShakedown.h; sourceTree = "<group>"; };
+		3DFF29B4172532B3003CA2AB /* SHDShakedown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDShakedown.m; sourceTree = "<group>"; };
+		3DFF29B5172532B3003CA2AB /* SHDShakedownEmailReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDShakedownEmailReporter.h; sourceTree = "<group>"; };
+		3DFF29B6172532B3003CA2AB /* SHDShakedownEmailReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDShakedownEmailReporter.m; sourceTree = "<group>"; };
+		3DFF29B7172532B3003CA2AB /* SHDShakedownReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDShakedownReporter.h; sourceTree = "<group>"; };
+		3DFF29B8172532B3003CA2AB /* SHDShakedownReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDShakedownReporter.m; sourceTree = "<group>"; };
+		3DFF29B9172532B3003CA2AB /* SHDShakedownYouTrackReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDShakedownYouTrackReporter.h; sourceTree = "<group>"; };
+		3DFF29BA172532B3003CA2AB /* SHDShakedownYouTrackReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDShakedownYouTrackReporter.m; sourceTree = "<group>"; };
+		3DFF29BB172532B3003CA2AB /* SHDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDTextFieldCell.h; sourceTree = "<group>"; };
+		3DFF29BC172532B3003CA2AB /* SHDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDTextFieldCell.m; sourceTree = "<group>"; };
+		3DFF29BD172532B3003CA2AB /* SHDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDTextViewCell.h; sourceTree = "<group>"; };
+		3DFF29BE172532B3003CA2AB /* SHDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDTextViewCell.m; sourceTree = "<group>"; };
+		3DFF29BF172532B3003CA2AB /* UIWindow+SHDShakeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+SHDShakeListener.h"; sourceTree = "<group>"; };
+		3DFF29C0172532B3003CA2AB /* UIWindow+SHDShakeListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+SHDShakeListener.m"; sourceTree = "<group>"; };
+		3DFF29D317253532003CA2AB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3DFF29D517253885003CA2AB /* SHDShakedownRedmineReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDShakedownRedmineReporter.h; sourceTree = "<group>"; };
+		3DFF29D617253886003CA2AB /* SHDShakedownRedmineReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDShakedownRedmineReporter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DFF295917253285003CA2AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF29D417253532003CA2AB /* MessageUI.framework in Frameworks */,
+				3DFF296017253285003CA2AB /* UIKit.framework in Frameworks */,
+				3DFF296217253285003CA2AB /* Foundation.framework in Frameworks */,
+				3DFF296417253285003CA2AB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFF298117253285003CA2AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF298717253285003CA2AB /* SenTestingKit.framework in Frameworks */,
+				3DFF298817253285003CA2AB /* UIKit.framework in Frameworks */,
+				3DFF298917253285003CA2AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DFF295317253285003CA2AB = {
+			isa = PBXGroup;
+			children = (
+				3DFF29D317253532003CA2AB /* MessageUI.framework */,
+				3DFF299D172532B3003CA2AB /* shakedown */,
+				3DFF296517253285003CA2AB /* ShakedownExample */,
+				3DFF298C17253285003CA2AB /* ShakedownExampleTests */,
+				3DFF295E17253285003CA2AB /* Frameworks */,
+				3DFF295D17253285003CA2AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DFF295D17253285003CA2AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF295C17253285003CA2AB /* ShakedownExample.app */,
+				3DFF298517253285003CA2AB /* ShakedownExampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DFF295E17253285003CA2AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF295F17253285003CA2AB /* UIKit.framework */,
+				3DFF296117253285003CA2AB /* Foundation.framework */,
+				3DFF296317253285003CA2AB /* CoreGraphics.framework */,
+				3DFF298617253285003CA2AB /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DFF296517253285003CA2AB /* ShakedownExample */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF296E17253285003CA2AB /* AppDelegate.h */,
+				3DFF296F17253285003CA2AB /* AppDelegate.m */,
+				3DFF297717253285003CA2AB /* MainStoryboard_iPhone.storyboard */,
+				3DFF297A17253285003CA2AB /* MainStoryboard_iPad.storyboard */,
+				3DFF297D17253285003CA2AB /* ViewController.h */,
+				3DFF297E17253285003CA2AB /* ViewController.m */,
+				3DFF296617253285003CA2AB /* Supporting Files */,
+			);
+			path = ShakedownExample;
+			sourceTree = "<group>";
+		};
+		3DFF296617253285003CA2AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF296717253285003CA2AB /* ShakedownExample-Info.plist */,
+				3DFF296817253285003CA2AB /* InfoPlist.strings */,
+				3DFF296B17253285003CA2AB /* main.m */,
+				3DFF296D17253285003CA2AB /* ShakedownExample-Prefix.pch */,
+				3DFF297117253285003CA2AB /* Default.png */,
+				3DFF297317253285003CA2AB /* Default@2x.png */,
+				3DFF297517253285003CA2AB /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DFF298C17253285003CA2AB /* ShakedownExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF299217253285003CA2AB /* ShakedownExampleTests.h */,
+				3DFF299317253285003CA2AB /* ShakedownExampleTests.m */,
+				3DFF298D17253285003CA2AB /* Supporting Files */,
+			);
+			path = ShakedownExampleTests;
+			sourceTree = "<group>";
+		};
+		3DFF298D17253285003CA2AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF298E17253285003CA2AB /* ShakedownExampleTests-Info.plist */,
+				3DFF298F17253285003CA2AB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DFF299D172532B3003CA2AB /* shakedown */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF299F172532B3003CA2AB /* README.md */,
+				3DFF29A0172532B3003CA2AB /* SHDBugReport.h */,
+				3DFF29A1172532B3003CA2AB /* SHDBugReport.m */,
+				3DFF29BF172532B3003CA2AB /* UIWindow+SHDShakeListener.h */,
+				3DFF29C0172532B3003CA2AB /* UIWindow+SHDShakeListener.m */,
+				3DFF29A2172532B3003CA2AB /* SHDButton.h */,
+				3DFF29A3172532B3003CA2AB /* SHDButton.m */,
+				3DFF29A4172532B3003CA2AB /* SHDConstants.h */,
+				3DFF29A5172532B3003CA2AB /* SHDDescriptiveInfoCell.h */,
+				3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */,
+				3DFF29BB172532B3003CA2AB /* SHDTextFieldCell.h */,
+				3DFF29BC172532B3003CA2AB /* SHDTextFieldCell.m */,
+				3DFF29BD172532B3003CA2AB /* SHDTextViewCell.h */,
+				3DFF29BE172532B3003CA2AB /* SHDTextViewCell.m */,
+				3DFF29A7172532B3003CA2AB /* SHDListCell.h */,
+				3DFF29A8172532B3003CA2AB /* SHDListCell.m */,
+				3DFF29A9172532B3003CA2AB /* SHDMultipleSelectionCell.h */,
+				3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */,
+				3DFF29AB172532B3003CA2AB /* SHDReporterView.h */,
+				3DFF29AC172532B3003CA2AB /* SHDReporterView.m */,
+				3DFF29AD172532B3003CA2AB /* SHDReporterViewController.h */,
+				3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */,
+				3DFF29AF172532B3003CA2AB /* SHDScreenshotsCell.h */,
+				3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */,
+				3DFF29B1172532B3003CA2AB /* SHDShakedown+Private.h */,
+				3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */,
+				3DFF29B3172532B3003CA2AB /* SHDShakedown.h */,
+				3DFF29B4172532B3003CA2AB /* SHDShakedown.m */,
+				3DFF29B7172532B3003CA2AB /* SHDShakedownReporter.h */,
+				3DFF29B8172532B3003CA2AB /* SHDShakedownReporter.m */,
+				3DFF29B5172532B3003CA2AB /* SHDShakedownEmailReporter.h */,
+				3DFF29B6172532B3003CA2AB /* SHDShakedownEmailReporter.m */,
+				3DFF29B9172532B3003CA2AB /* SHDShakedownYouTrackReporter.h */,
+				3DFF29BA172532B3003CA2AB /* SHDShakedownYouTrackReporter.m */,
+				3DFF29D517253885003CA2AB /* SHDShakedownRedmineReporter.h */,
+				3DFF29D617253886003CA2AB /* SHDShakedownRedmineReporter.m */,
+			);
+			path = shakedown;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DFF295B17253285003CA2AB /* ShakedownExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFF299717253285003CA2AB /* Build configuration list for PBXNativeTarget "ShakedownExample" */;
+			buildPhases = (
+				3DFF295817253285003CA2AB /* Sources */,
+				3DFF295917253285003CA2AB /* Frameworks */,
+				3DFF295A17253285003CA2AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShakedownExample;
+			productName = ShakedownExample;
+			productReference = 3DFF295C17253285003CA2AB /* ShakedownExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DFF298417253285003CA2AB /* ShakedownExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFF299A17253285003CA2AB /* Build configuration list for PBXNativeTarget "ShakedownExampleTests" */;
+			buildPhases = (
+				3DFF298017253285003CA2AB /* Sources */,
+				3DFF298117253285003CA2AB /* Frameworks */,
+				3DFF298217253285003CA2AB /* Resources */,
+				3DFF298317253285003CA2AB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DFF298B17253285003CA2AB /* PBXTargetDependency */,
+			);
+			name = ShakedownExampleTests;
+			productName = ShakedownExampleTests;
+			productReference = 3DFF298517253285003CA2AB /* ShakedownExampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DFF295417253285003CA2AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Brightstarsoftware;
+			};
+			buildConfigurationList = 3DFF295717253285003CA2AB /* Build configuration list for PBXProject "ShakedownExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3DFF295317253285003CA2AB;
+			productRefGroup = 3DFF295D17253285003CA2AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DFF295B17253285003CA2AB /* ShakedownExample */,
+				3DFF298417253285003CA2AB /* ShakedownExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DFF295A17253285003CA2AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF296A17253285003CA2AB /* InfoPlist.strings in Resources */,
+				3DFF297217253285003CA2AB /* Default.png in Resources */,
+				3DFF297417253285003CA2AB /* Default@2x.png in Resources */,
+				3DFF297617253285003CA2AB /* Default-568h@2x.png in Resources */,
+				3DFF297917253285003CA2AB /* MainStoryboard_iPhone.storyboard in Resources */,
+				3DFF297C17253285003CA2AB /* MainStoryboard_iPad.storyboard in Resources */,
+				3DFF29C2172532B3003CA2AB /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFF298217253285003CA2AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF299117253285003CA2AB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DFF298317253285003CA2AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DFF295817253285003CA2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF296C17253285003CA2AB /* main.m in Sources */,
+				3DFF297017253285003CA2AB /* AppDelegate.m in Sources */,
+				3DFF297F17253285003CA2AB /* ViewController.m in Sources */,
+				3DFF29C3172532B3003CA2AB /* SHDBugReport.m in Sources */,
+				3DFF29C4172532B3003CA2AB /* SHDButton.m in Sources */,
+				3DFF29C5172532B3003CA2AB /* SHDDescriptiveInfoCell.m in Sources */,
+				3DFF29C6172532B3003CA2AB /* SHDListCell.m in Sources */,
+				3DFF29C7172532B3003CA2AB /* SHDMultipleSelectionCell.m in Sources */,
+				3DFF29C8172532B3003CA2AB /* SHDReporterView.m in Sources */,
+				3DFF29C9172532B3003CA2AB /* SHDReporterViewController.m in Sources */,
+				3DFF29CA172532B3003CA2AB /* SHDScreenshotsCell.m in Sources */,
+				3DFF29CB172532B3003CA2AB /* SHDShakedown+Private.m in Sources */,
+				3DFF29CC172532B3003CA2AB /* SHDShakedown.m in Sources */,
+				3DFF29CD172532B3003CA2AB /* SHDShakedownEmailReporter.m in Sources */,
+				3DFF29CE172532B3003CA2AB /* SHDShakedownReporter.m in Sources */,
+				3DFF29CF172532B3003CA2AB /* SHDShakedownYouTrackReporter.m in Sources */,
+				3DFF29D0172532B3003CA2AB /* SHDTextFieldCell.m in Sources */,
+				3DFF29D1172532B3003CA2AB /* SHDTextViewCell.m in Sources */,
+				3DFF29D2172532B3003CA2AB /* UIWindow+SHDShakeListener.m in Sources */,
+				3DFF29D717253887003CA2AB /* SHDShakedownRedmineReporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFF298017253285003CA2AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF299417253285003CA2AB /* ShakedownExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DFF298B17253285003CA2AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DFF295B17253285003CA2AB /* ShakedownExample */;
+			targetProxy = 3DFF298A17253285003CA2AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DFF296817253285003CA2AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFF296917253285003CA2AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3DFF297717253285003CA2AB /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFF297817253285003CA2AB /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3DFF297A17253285003CA2AB /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFF297B17253285003CA2AB /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		3DFF298F17253285003CA2AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFF299017253285003CA2AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DFF299517253285003CA2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DFF299617253285003CA2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DFF299817253285003CA2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShakedownExample/ShakedownExample-Prefix.pch";
+				INFOPLIST_FILE = "ShakedownExample/ShakedownExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3DFF299917253285003CA2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShakedownExample/ShakedownExample-Prefix.pch";
+				INFOPLIST_FILE = "ShakedownExample/ShakedownExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3DFF299B17253285003CA2AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShakedownExample.app/ShakedownExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShakedownExample/ShakedownExample-Prefix.pch";
+				INFOPLIST_FILE = "ShakedownExampleTests/ShakedownExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3DFF299C17253285003CA2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShakedownExample.app/ShakedownExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ShakedownExample/ShakedownExample-Prefix.pch";
+				INFOPLIST_FILE = "ShakedownExampleTests/ShakedownExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DFF295717253285003CA2AB /* Build configuration list for PBXProject "ShakedownExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFF299517253285003CA2AB /* Debug */,
+				3DFF299617253285003CA2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFF299717253285003CA2AB /* Build configuration list for PBXNativeTarget "ShakedownExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFF299817253285003CA2AB /* Debug */,
+				3DFF299917253285003CA2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFF299A17253285003CA2AB /* Build configuration list for PBXNativeTarget "ShakedownExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFF299B17253285003CA2AB /* Debug */,
+				3DFF299C17253285003CA2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DFF295417253285003CA2AB /* Project object */;
+}
