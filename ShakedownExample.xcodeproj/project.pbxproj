@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				3DFF29D317253532003CA2AB /* MessageUI.framework */,
-				3DFF299D172532B3003CA2AB /* shakedown */,
+				3DFF299D172532B3003CA2AB /* Shakedown */,
 				3DFF296517253285003CA2AB /* ShakedownExample */,
 				3DFF298C17253285003CA2AB /* ShakedownExampleTests */,
 				3DFF295E17253285003CA2AB /* Frameworks */,
@@ -222,17 +222,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3DFF299D172532B3003CA2AB /* shakedown */ = {
+		3DFF299D172532B3003CA2AB /* Shakedown */ = {
 			isa = PBXGroup;
 			children = (
 				3DFF299F172532B3003CA2AB /* README.md */,
-				3DFF29A0172532B3003CA2AB /* SHDBugReport.h */,
-				3DFF29A1172532B3003CA2AB /* SHDBugReport.m */,
+				3DFF29A4172532B3003CA2AB /* SHDConstants.h */,
+				3DFF29AD172532B3003CA2AB /* SHDReporterViewController.h */,
+				3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */,
+				3DFF29AB172532B3003CA2AB /* SHDReporterView.h */,
+				3DFF29AC172532B3003CA2AB /* SHDReporterView.m */,
 				3DFF29BF172532B3003CA2AB /* UIWindow+SHDShakeListener.h */,
 				3DFF29C0172532B3003CA2AB /* UIWindow+SHDShakeListener.m */,
 				3DFF29A2172532B3003CA2AB /* SHDButton.h */,
 				3DFF29A3172532B3003CA2AB /* SHDButton.m */,
-				3DFF29A4172532B3003CA2AB /* SHDConstants.h */,
 				3DFF29A5172532B3003CA2AB /* SHDDescriptiveInfoCell.h */,
 				3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */,
 				3DFF29BB172532B3003CA2AB /* SHDTextFieldCell.h */,
@@ -243,16 +245,14 @@
 				3DFF29A8172532B3003CA2AB /* SHDListCell.m */,
 				3DFF29A9172532B3003CA2AB /* SHDMultipleSelectionCell.h */,
 				3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */,
-				3DFF29AB172532B3003CA2AB /* SHDReporterView.h */,
-				3DFF29AC172532B3003CA2AB /* SHDReporterView.m */,
-				3DFF29AD172532B3003CA2AB /* SHDReporterViewController.h */,
-				3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */,
 				3DFF29AF172532B3003CA2AB /* SHDScreenshotsCell.h */,
 				3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */,
 				3DFF29B1172532B3003CA2AB /* SHDShakedown+Private.h */,
 				3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */,
 				3DFF29B3172532B3003CA2AB /* SHDShakedown.h */,
 				3DFF29B4172532B3003CA2AB /* SHDShakedown.m */,
+				3DFF29A0172532B3003CA2AB /* SHDBugReport.h */,
+				3DFF29A1172532B3003CA2AB /* SHDBugReport.m */,
 				3DFF29B7172532B3003CA2AB /* SHDShakedownReporter.h */,
 				3DFF29B8172532B3003CA2AB /* SHDShakedownReporter.m */,
 				3DFF29B5172532B3003CA2AB /* SHDShakedownEmailReporter.h */,
@@ -262,6 +262,7 @@
 				3DFF29D517253885003CA2AB /* SHDShakedownRedmineReporter.h */,
 				3DFF29D617253886003CA2AB /* SHDShakedownRedmineReporter.m */,
 			);
+			name = Shakedown;
 			path = shakedown;
 			sourceTree = "<group>";
 		};

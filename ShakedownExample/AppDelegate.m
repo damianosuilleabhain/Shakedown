@@ -10,9 +10,10 @@
 #import "SHDShakedown.h"
 #import "SHDShakedownRedmineReporter.h"
 
-#warning Add base redmine url and user api token to work with redmine !!!
+#warning !!!REDMINE INFO TO WORK WITH!!!
 NSString * baseUrl = @"";
 NSString * userApiToken = @"";
+NSInteger projectId = 1;
 
 @implementation AppDelegate
 
@@ -20,9 +21,10 @@ NSString * userApiToken = @"";
 {
     [SHDShakedown sharedShakedown];
     SHDShakedownRedmineReporter * reporter = [[SHDShakedownRedmineReporter alloc] initWithApiUrl:baseUrl];
-    [reporter setUserApiToken: userApiToken];
+    reporter.userApiToken = userApiToken;
+    reporter.projectId = projectId;
     [[SHDShakedown sharedShakedown] setReporter:reporter];
-    // Override point for customization after application launch.
+
     return YES;
 }
 							

@@ -10,7 +10,6 @@
 
 NSString * defaultApiUrl = @"http://www.redmine.org";
 NSString * createIssueUrlAppendix = @"/issues.json";
-
 NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
 
 @implementation SHDShakedownRedmineReporter
@@ -26,24 +25,20 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
 - (void)reportBug:(SHDBugReport *)bugReport {
 
     NSMutableDictionary * issueInfoDictionary = [NSMutableDictionary dictionary];
-//    [issueInfoDictionary setObject:@(self.project_id) forKey:@"project_id"];
-//    [issueInfoDictionary setObject:@(self.tracker_id) forKey:@"tracker_id"];
-//    [issueInfoDictionary setObject:@(self.status_id) forKey:@"status_id"];
-    [issueInfoDictionary setObject:@(54) forKey:@"project_id"];
-    [issueInfoDictionary setObject:@(1) forKey:@"tracker_id"];
-    [issueInfoDictionary setObject:@(1) forKey:@"status_id"];
-    
+    if (bugReport.trackerId > 0) [issueInfoDictionary setObject:@(bugReport.trackerId) forKey:@"tracker_id"];
+    if (bugReport.statusId > 0) [issueInfoDictionary setObject:@(bugReport.statusId) forKey:@"status_id"];
     [issueInfoDictionary setObject:bugReport.title forKey:@"subject"];
     [issueInfoDictionary setObject:bugReport.formattedReport forKey:@"description"];
-    
+
+    NSAssert(self.projectId != 0, @"PROJECT ID SHOULD BE SETTED BEFOR ISSUE CREATION!!!");
+    [issueInfoDictionary setObject:@(self.projectId) forKey:@"project_id"];
+
     NSDictionary * resultDictionary = [NSDictionary dictionaryWithObject:issueInfoDictionary forKey:@"issue"];
 
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:resultDictionary options:NSJSONWritingPrettyPrinted error:&error];
-    if (!jsonData || error != nil) {
-        NSLog(@"Got an error: %@", error);
+    if (!jsonData.length || error != nil)
         [NSException raise:@"COULD NOT CREATE JSON FROM DICT" format:@""];
-    }
     
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 

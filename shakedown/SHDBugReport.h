@@ -20,4 +20,16 @@
 
 @property (nonatomic, readonly) NSString *formattedReport;
 
+#warning Redmine issue properties
+
+@property (nonatomic, assign) NSInteger trackerId;
+@property (nonatomic, assign) NSInteger statusId;
+@property (nonatomic, assign) NSInteger categoryId;
+
+@property (nonatomic, assign) NSInteger assignedToId;
+@property (nonatomic, assign) NSInteger parentIssueId;
+//-custom_fields - See Custom fields
+@property (nonatomic, assign) NSArray * watcherUserIds;
+
+
 @end
