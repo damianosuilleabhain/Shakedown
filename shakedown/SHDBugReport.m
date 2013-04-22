@@ -40,9 +40,10 @@
                                  @"Name": self.device.name,
                                  @"System Name": self.device.systemName,
                                  @"iOS Version": self.device.systemVersion,
-                                 @"model": self.device.model,
-                                 @"UI Idiom": self.device.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? @"UIUserInterfaceIdiomPhone" : @"UIUserInterfaceIdiomPad",
-                                 @"IDFV": identifierForVendor ?: @""
+                                 @"Model": self.device.model,
+                                 @"UI Idiom": self.device.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? @"iPhone" : @"iPad",
+                                 @"IDFV": identifierForVendor ?: @"",
+                                 @"App Version": [NSString stringWithFormat:@"%@ (%@)",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] ]
                                  };
     return dictionary;
 }
