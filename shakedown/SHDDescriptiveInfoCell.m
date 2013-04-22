@@ -97,8 +97,8 @@
     SHDDescriptiveInfoCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[SHDDescriptiveInfoCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.keyLabel.text =  [[self _keyForRow:indexPath.row] uppercaseString];
-        cell.valueLabel.text = [[self.dictionary objectForKey:[self _keyForRow:indexPath.row]] uppercaseString];
+        cell.keyLabel.text =  [self _keyForRow:indexPath.row];
+        cell.valueLabel.text = [self.dictionary objectForKey:[self _keyForRow:indexPath.row]] ;
     }
     return cell;
 }
