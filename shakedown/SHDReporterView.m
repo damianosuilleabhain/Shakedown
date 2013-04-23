@@ -15,6 +15,7 @@
 #import "SHDScreenshotsCell.h"
 #import "SHDDescriptiveInfoCell.h"
 #import "SHDListCell.h"
+#import "SHDRedmineAdditionalDatasource.h"
 
 @implementation SHDReporterView
 
@@ -33,7 +34,14 @@
     CGFloat width = self.frame.size.width;
     BOOL tall = [[UIScreen mainScreen] bounds].size.height == 568;
     CGFloat offset = 0;
-        
+    
+    if (![[SHDRedmineAdditionalDatasource sharedDatasource] trackersLoadingRequestFailed]) {
+        self.trackerCell = [[SHDMultipleSelectionCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
+        [self addSubview:self.trackerCell];
+        self.trackerCell.backgroundColor = kSHDBackgroundAlternateColor;
+        offset += self.trackerCell.frame.size.height;
+    }
+
     self.titleCell = [[SHDTextFieldCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
     [self addSubview:self.titleCell];
     offset += self.titleCell.frame.size.height;

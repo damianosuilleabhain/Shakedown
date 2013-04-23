@@ -22,6 +22,7 @@
 #import "SHDShakedownReporter.h"
 #import "SHDShakedown+Private.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SHDRedmineAdditionalDatasource.h"
 
 @interface SHDLoadingView : UIView
 
@@ -107,6 +108,8 @@
     view.descriptionCell.placeholder = @"I was doing this and then this happened...";
     view.reproducabilityCell.text = @"This happens";
     view.reproducabilityCell.options = @[@"every time", @"sometimes", @"infrequently"];
+    view.trackerCell.text = @"Type of issue is ";
+    view.trackerCell.options = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackersNames];
     view.screenshotsCell.screenshots = self.bugReport.screenshots;
     NSMutableDictionary *device = [NSMutableDictionary dictionaryWithDictionary:self.bugReport.deviceDictionary];
     [device addEntriesFromDictionary:self.bugReport.userInformation];
@@ -135,6 +138,7 @@
     }
     self.bugReport.reproducability = view.reproducabilityCell.text;
     self.bugReport.steps = view.stepsCell.items;
+    self.bugReport.trackerId = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackerIdForName:view.trackerCell.text];
     [[[SHDShakedown sharedShakedown] reporter] setDelegate:self];
     [[SHDShakedown sharedShakedown] submitReport:self.bugReport];
 }

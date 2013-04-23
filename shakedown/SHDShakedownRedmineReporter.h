@@ -8,6 +8,8 @@
 
 #import "SHDShakedownReporter.h"
 
+extern NSString * redmineApiKeyHeaderKey;
+
 @interface SHDShakedownRedmineReporter : SHDShakedownReporter
 
 - (id)initWithApiUrl:(NSString *)apiUrl;

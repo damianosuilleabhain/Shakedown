@@ -12,7 +12,6 @@
 typedef void (^CompletionHandler) (NSURLResponse *response, NSData *data, NSError *error);
 typedef void (^AttacmentsUploadedHandler) (NSMutableArray * tokens, NSError *error);
 
-NSString * defaultApiUrl = @"http://www.redmine.org";
 NSString * createIssueUrlAppendix = @"/issues.json";
 NSString * uploadAttachmentUrlAppendix = @"/uploads.json";
 NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
@@ -22,7 +21,7 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
 - (id)initWithApiUrl:(NSString *)apiUrl {
     self = [super init];
     if (self) {
-        self.apiURL = apiUrl ?: defaultApiUrl;
+        self.apiURL = apiUrl;
     }
     return self;
 }
@@ -52,11 +51,12 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
     }
     
     NSMutableDictionary * issueInfoDictionary = [NSMutableDictionary dictionary];
-    if (bugReport.trackerId > 0) [issueInfoDictionary setObject:@(bugReport.trackerId) forKey:@"tracker_id"];
+    if (bugReport.trackerId > 0)
+        [issueInfoDictionary setObject:@(bugReport.trackerId) forKey:@"tracker_id"];
     if (bugReport.statusId > 0) [issueInfoDictionary setObject:@(bugReport.statusId) forKey:@"status_id"];
-    [issueInfoDictionary setObject:bugReport.title forKey:@"subject"];
-    [issueInfoDictionary setObject:bugReport.formattedReport forKey:@"description"];
-    [issueInfoDictionary setObject:uploadsArray forKey:@"uploads"];
+    if (bugReport.title.length > 0) [issueInfoDictionary setObject:bugReport.title forKey:@"subject"];
+    if (bugReport.formattedReport.length > 0) [issueInfoDictionary setObject:bugReport.formattedReport forKey:@"description"];
+    if (uploadsArray.count > 0) [issueInfoDictionary setObject:uploadsArray forKey:@"uploads"];
     
     NSAssert(self.projectId != 0, @"PROJECT ID SHOULD BE SETTED BEFOR ISSUE CREATION!!!");
     [issueInfoDictionary setObject:@(self.projectId) forKey:@"project_id"];
@@ -112,7 +112,7 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
     [createIssueRequest setHTTPBody:body];
     [createIssueRequest setHTTPMethod:@"POST"];
 
-    NSAssert(self.userApiToken.length != 0, @"USERAPITOKEN SHOULD BE SETTED BEFOR REQUEST!!!");
+    NSAssert(self.userApiToken.length != 0, @"USER API TOKEN SHOULD BE SETTED BEFORE REQUEST!!!");
     [createIssueRequest setValue:self.userApiToken forHTTPHeaderField:redmineApiKeyHeaderKey];
     [createIssueRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
     
@@ -122,7 +122,7 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
 - (NSString *)attachmentTokenFromResponceData:(NSData *)data
 {
     NSError *error = nil;
-    NSDictionary * attachmentDictionary = [NSJSONSerialization JSONObjectWithData:data options:NULL error:&error];
+    NSDictionary * attachmentDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     NSString * attachmentToken = nil;
     if (attachmentDictionary && error == nil)
         attachmentToken = [[attachmentDictionary objectForKey:@"upload"] objectForKey:@"token"];

@@ -17,6 +17,7 @@
 
 @interface SHDReporterView : UIView
 
+@property (nonatomic, strong) SHDMultipleSelectionCell *trackerCell;
 @property (nonatomic, strong) SHDTextFieldCell *titleCell;
 @property (nonatomic, strong) SHDTextViewCell *descriptionCell;
 @property (nonatomic, strong) SHDMultipleSelectionCell *reproducabilityCell;

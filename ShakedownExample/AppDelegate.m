@@ -24,6 +24,7 @@ NSInteger projectId = 1;
     reporter.userApiToken = userApiToken;
     reporter.projectId = projectId;
     [[SHDShakedown sharedShakedown] setReporter:reporter];
+    [[SHDRedmineAdditionalDatasource sharedDatasource] updateDatasourceIfNeededWithCompletionHandler:nil];
 
     return YES;
 }
