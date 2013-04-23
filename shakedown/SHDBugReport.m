@@ -21,7 +21,9 @@
     self = [super init];
     if (self) {
         _device = [UIDevice currentDevice];
+#if defined(DEBUG) || defined(ADHOC)
         _screenshots = [NSMutableArray arrayWithObject:[UIImage imageWithCGImage:UIGetScreenImage()]];
+#endif
         _title = @"";
         _generalDescription = @"";
         _reproducability = @"";
@@ -71,6 +73,8 @@
     return report;
 }
 
+#if defined(DEBUG) || defined(ADHOC)
 CGImageRef UIGetScreenImage(void);
+#endif
 
 @end
