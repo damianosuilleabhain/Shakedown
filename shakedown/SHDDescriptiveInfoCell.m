@@ -60,6 +60,7 @@
         _tableView.delegate = self;
         _tableView.backgroundColor = [UIColor clearColor];;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.scrollEnabled = NO;
     }
     return self;
 }
@@ -69,6 +70,9 @@
     [self.tableView reloadData];
 }
 
+- (NSInteger)height {
+    return self.tableView.contentSize.height;
+}
 
 #pragma mark - Table View
 

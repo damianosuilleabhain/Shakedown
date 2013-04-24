@@ -11,5 +11,6 @@
 @interface SHDDescriptiveInfoCell : UIView
 
 @property (nonatomic, strong) NSDictionary *dictionary;
+@property (nonatomic, assign, readonly) NSInteger height;
 
 @end

@@ -17,57 +17,94 @@
 #import "SHDListCell.h"
 #import "SHDRedmineAdditionalDatasource.h"
 
+#define IS_IPHONE UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
+#define IS_WIDESCREEN UIScreen.mainScreen.bounds.size.height == 568
+#define IS_WIDESCREEN_IPHONE (IS_IPHONE && IS_WIDESCREEN)
+
+@interface SHDReporterView ()
+@property (nonatomic, strong) UIScrollView * scrollView;
+@property (nonatomic, strong) UIView * contentView;
+@property (nonatomic, strong) NSMutableArray * cells;
+@end
+
+
 @implementation SHDReporterView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self _setup];
+        [self.scrollView addSubview:self.contentView];
+        [self addSubview:self.scrollView];
+        self.backgroundColor = kSHDBackgroundColor;
     }
     return self;
 }
 
-- (void)_setup {
-    
-    self.backgroundColor = kSHDBackgroundColor;
-    CGFloat width = self.frame.size.width;
-    BOOL tall = [[UIScreen mainScreen] bounds].size.height == 568;
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
     CGFloat offset = 0;
-    
-    if (![[SHDRedmineAdditionalDatasource sharedDatasource] trackersLoadingRequestFailed]) {
-        self.trackerCell = [[SHDMultipleSelectionCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
-        [self addSubview:self.trackerCell];
-        self.trackerCell.backgroundColor = kSHDBackgroundAlternateColor;
-        offset += self.trackerCell.frame.size.height;
+
+    for (UIView * cell in self.cells) {
+        NSInteger cellHeight = 0;
+        if (cell == self.deviceInfoCell)
+            cellHeight = self.deviceInfoCell.height;
+        else
+            cellHeight = cell.frame.size.height;
+        cell.frame  = (CGRect){cell.frame.origin.x, offset, cell.frame.size.width, cellHeight};
+        
+        offset += cell.frame.size.height;
     }
-
-    self.titleCell = [[SHDTextFieldCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
-    [self addSubview:self.titleCell];
-    offset += self.titleCell.frame.size.height;
     
-    self.descriptionCell = [[SHDTextViewCell alloc] initWithFrame:CGRectMake(0, offset, width, (tall ? 120 : 70))];
-    [self addSubview:self.descriptionCell];
-    self.descriptionCell.backgroundColor = kSHDBackgroundAlternateColor;
-    offset += self.descriptionCell.frame.size.height;
-    
-    self.reproducabilityCell = [[SHDMultipleSelectionCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
-    [self addSubview:self.reproducabilityCell];
-    offset += self.reproducabilityCell.frame.size.height;
+    self.contentView.frame = (CGRect) {self.contentView.frame.origin, self.frame.size.width, offset};
+    self.scrollView.contentSize = self.contentView.frame.size;
+}
 
-    self.stepsCell = [[SHDListCell alloc] initWithFrame:CGRectMake(0, offset, width, 50)];
-    [self addSubview:self.stepsCell];
-    self.stepsCell.backgroundColor = kSHDBackgroundAlternateColor;
-    offset += self.stepsCell.frame.size.height;
+#pragma mark - Getters
 
-    self.screenshotsCell = [[SHDScreenshotsCell alloc] initWithFrame:CGRectMake(0, offset, width, 100)];
-    [self addSubview:self.screenshotsCell];
-    offset += self.screenshotsCell.frame.size.height;
-    
-    self.deviceInfoCell = [[SHDDescriptiveInfoCell alloc] initWithFrame:CGRectMake(0, offset, width, self.frame.size.height - offset)];
-    self.deviceInfoCell.backgroundColor = kSHDBackgroundAlternateColor;
-    [self addSubview:self.deviceInfoCell];
+- (UIScrollView *)scrollView
+{
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    }
+    return _scrollView;
+}
 
+- (NSMutableArray *)cells
+{
+    if (!_cells) {
+        _cells = [NSMutableArray array];
+    }
+    return _cells;
+}
+
+- (UIView *)contentView
+{
+    if (!_contentView) {
+        _contentView = [[UIView alloc] initWithFrame:self.bounds];
+        
+        UIColor * color = kSHDBackgroundAlternateColor;
+        self.trackerCell = [self cellForClass:SHDMultipleSelectionCell.class height:50 backgroundColor:color];
+        self.titleCell = [self cellForClass:SHDTextFieldCell.class height:50 backgroundColor:nil];
+        self.descriptionCell = [self cellForClass:SHDTextViewCell.class height:(IS_WIDESCREEN_IPHONE ? 120:70) backgroundColor:color];
+        self.reproducabilityCell = [self cellForClass:SHDMultipleSelectionCell.class height:50 backgroundColor:nil];
+        self.stepsCell = [self cellForClass:SHDListCell.class height:50 backgroundColor:color];
+        self.screenshotsCell =[self cellForClass:SHDScreenshotsCell.class height:100 backgroundColor:nil];
+        self.deviceInfoCell = [self cellForClass:SHDDescriptiveInfoCell.class height:100 backgroundColor:color];
+    }
+    return _contentView;
+}
+
+- (id)cellForClass:(Class)class height:(NSInteger)height backgroundColor:(UIColor *)backgroundColor {
+    CGRect cellFrame = (CGRect){CGPointZero, self.bounds.size.width, height};
+    UIView * cell = [[class alloc] initWithFrame:cellFrame];
+    if (backgroundColor != nil) cell.backgroundColor = backgroundColor;
+    [self.contentView addSubview:cell];
+    [self.cells addObject:cell];
+    return cell;
 }
 
 @end

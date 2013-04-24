@@ -104,12 +104,13 @@
                                                                     };
     SHDReporterView *view = (SHDReporterView *)self.view;
     
+    view.trackerCell.text = @"Type of issue is ";
+    view.trackerCell.options = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackersNames];
+
     view.titleCell.textField.placeholder = @"This bug is titled...";
     view.descriptionCell.placeholder = @"I was doing this and then this happened...";
     view.reproducabilityCell.text = @"This happens";
     view.reproducabilityCell.options = @[@"every time", @"sometimes", @"infrequently"];
-    view.trackerCell.text = @"Type of issue is ";
-    view.trackerCell.options = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackersNames];
     view.screenshotsCell.screenshots = self.bugReport.screenshots;
     NSMutableDictionary *device = [NSMutableDictionary dictionaryWithDictionary:self.bugReport.deviceDictionary];
     [device addEntriesFromDictionary:self.bugReport.userInformation];
@@ -144,7 +145,6 @@
 }
 
 #pragma mark - Reporter Delegate
-
 
 - (void)shakedownFailedToFileBug:(NSString *)message {
     [self.loadingView removeFromSuperview];
