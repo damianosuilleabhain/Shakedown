@@ -22,7 +22,7 @@
 #import "SHDShakedownReporter.h"
 #import "SHDShakedown+Private.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SHDRedmineAdditionalDatasource.h"
+#import "SHDRedmineSpecificDatasource.h"
 
 @interface SHDLoadingView : UIView
 
@@ -59,16 +59,18 @@
 @interface SHDReporterViewController () <SHDShakedownReporterDelegate>
 
 @property (nonatomic, strong) SHDBugReport *bugReport;
+@property (nonatomic, strong) SHDReporterSpecificDatasource *datasource;
 @property (nonatomic, strong) SHDLoadingView *loadingView;
 
 @end
 
 @implementation SHDReporterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bugReport:(SHDBugReport *)bugReport {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bugReport:(SHDBugReport *)bugReport datasource:(SHDReporterSpecificDatasource *)datasource {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _bugReport = bugReport;
+        _datasource = datasource;
     }
     return self;
 }
@@ -98,15 +100,12 @@
     self.navigationItem.rightBarButtonItem = saveBarButton;
     self.navigationItem.title = @"Report Issue";
     self.navigationController.navigationBar.tintColor = kSHDBackgroundColor;
-    self.navigationController.navigationBar.titleTextAttributes = @{
-                                                                    UITextAttributeTextColor: kSHDTextNormalColor,
-                                                                    UITextAttributeTextShadowColor: [UIColor clearColor]
-                                                                    };
+    self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor: kSHDTextNormalColor,
+                                                                    UITextAttributeTextShadowColor: [UIColor clearColor] };
     SHDReporterView *view = (SHDReporterView *)self.view;
     
     view.trackerCell.text = @"Type of issue is ";
-    view.trackerCell.options = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackersNames];
-
+    view.trackerCell.options = self.datasource.issueTrackersNames;
     view.titleCell.textField.placeholder = @"This bug is titled...";
     view.descriptionCell.placeholder = @"I was doing this and then this happened...";
     view.reproducabilityCell.text = @"This happens";
@@ -139,7 +138,7 @@
     }
     self.bugReport.reproducability = view.reproducabilityCell.text;
     self.bugReport.steps = view.stepsCell.items;
-    self.bugReport.trackerId = [[SHDRedmineAdditionalDatasource sharedDatasource] issueTrackerIdForName:view.trackerCell.text];
+    self.bugReport.issueTracker = view.trackerCell.text;
     [[[SHDShakedown sharedShakedown] reporter] setDelegate:self];
     [[SHDShakedown sharedShakedown] submitReport:self.bugReport];
 }

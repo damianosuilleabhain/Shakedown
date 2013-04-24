@@ -1,12 +1,12 @@
 //
-//  SHDRedmineAdditionalDatasource.m
+//  SHDRedmineSpecificDatasource.h
 //  ShakedownExample
 //
 //  Created by Alexey Bahtin on 4/23/13.
 //  Copyright (c) 2013 Brightstarsoftware. All rights reserved.
 //
 
-#import "SHDRedmineAdditionalDatasource.h"
+#import "SHDRedmineSpecificDatasource.h"
 #import "SHDShakedown.h"
 #import "SHDShakedownReporter.h"
 #import "SHDShakedownRedmineReporter.h"
@@ -23,21 +23,11 @@ NSString * trackersUrlAppendex = @"/trackers.json";
 @end
 
 
-@interface SHDRedmineAdditionalDatasource ()
+@interface SHDRedmineSpecificDatasource ()
 @property (nonatomic, strong) NSMutableArray * trackersArray;
 @end
 
-@implementation SHDRedmineAdditionalDatasource
-
-+ (SHDRedmineAdditionalDatasource *)sharedDatasource
-{
-    static dispatch_once_t onceToken;
-    static SHDRedmineAdditionalDatasource *instance = nil;
-    dispatch_once(&onceToken, ^{
-        instance = [[SHDRedmineAdditionalDatasource alloc] init];
-    });
-    return instance;
-}
+@implementation SHDRedmineSpecificDatasource
 
 - (NSArray *) issueTrackersNames
 {

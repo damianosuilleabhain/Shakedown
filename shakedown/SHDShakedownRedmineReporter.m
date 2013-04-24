@@ -8,6 +8,7 @@
 
 #import "SHDShakedownRedmineReporter.h"
 #import "NSURLResponse+Shakedown.h"
+#import "SHDRedmineSpecificDatasource.h"
 
 typedef void (^CompletionHandler) (NSURLResponse *response, NSData *data, NSError *error);
 typedef void (^AttacmentsUploadedHandler) (NSMutableArray * tokens, NSError *error);
@@ -15,6 +16,10 @@ typedef void (^AttacmentsUploadedHandler) (NSMutableArray * tokens, NSError *err
 NSString * createIssueUrlAppendix = @"/issues.json";
 NSString * uploadAttachmentUrlAppendix = @"/uploads.json";
 NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
+
+@interface SHDShakedownRedmineReporter ()
+@property (nonatomic, strong) SHDRedmineSpecificDatasource * datasource;
+@end
 
 @implementation SHDShakedownRedmineReporter
 
@@ -38,6 +43,17 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
     }];
 }
 
+- (SHDReporterSpecificDatasource *)reporterSpecificDatasource
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        super.reporterSpecificDatasource = [[SHDRedmineSpecificDatasource alloc] init];
+    });
+    return super.reporterSpecificDatasource;
+}
+
+#pragma mark - Bug reporting methods 
+
 - (void)uploadBugReportToRedmine:(SHDBugReport *)bugReport attachmentsTokens:(NSArray *)attachmentsTokens completionHandler:(CompletionHandler)completionHandler
 {
     NSMutableArray * uploadsArray = [NSMutableArray array];
@@ -51,8 +67,10 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
     }
     
     NSMutableDictionary * issueInfoDictionary = [NSMutableDictionary dictionary];
-    if (bugReport.trackerId > 0)
-        [issueInfoDictionary setObject:@(bugReport.trackerId) forKey:@"tracker_id"];
+    if (bugReport.issueTracker.length) {
+        SHDRedmineSpecificDatasource * datasource = (id)self.reporterSpecificDatasource;
+        [issueInfoDictionary setObject:@([datasource issueTrackerIdForName:bugReport.issueTracker]) forKey:@"tracker_id"];
+    }
     if (bugReport.statusId > 0) [issueInfoDictionary setObject:@(bugReport.statusId) forKey:@"status_id"];
     if (bugReport.title.length > 0) [issueInfoDictionary setObject:bugReport.title forKey:@"subject"];
     if (bugReport.formattedReport.length > 0) [issueInfoDictionary setObject:bugReport.formattedReport forKey:@"description"];

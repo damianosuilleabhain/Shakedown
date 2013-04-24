@@ -7,6 +7,7 @@
 //
 
 #import "SHDShakedownReporter.h"
+#import "SHDReporterSpecificDatasource.h"
 
 @implementation SHDShakedownReporter
 
@@ -49,6 +50,13 @@
     
     return body;
 
+}
+
+- (SHDReporterSpecificDatasource *)reporterSpecificDatasource {
+    if (!_reporterSpecificDatasource) {
+        _reporterSpecificDatasource = [[SHDReporterSpecificDatasource alloc] init];
+    }
+    return _reporterSpecificDatasource;
 }
 
 @end

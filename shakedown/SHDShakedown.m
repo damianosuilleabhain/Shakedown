@@ -27,7 +27,6 @@
     if (self) {
         [self resumeListeningForShakes];
         [self displayButton];
-        _reporter = [[SHDShakedownEmailReporter alloc] init];
     }
     return self;
 }
@@ -75,17 +74,28 @@
     [self _showReporter];
 }
 
+- (void)setReporter:(SHDShakedownReporter *)reporter
+{
+    _reporter = reporter;
+    [_reporter.reporterSpecificDatasource updateDatasourceIfNeededWithCompletionHandler:nil];
+}
+
 #pragma mark - Reporting
 
 - (void)_showReporter {
+    if (!self.reporter) {
+        self.reporter = [[SHDShakedownEmailReporter alloc] init];
+    }
+
     SHDBugReport *newBug = [[SHDBugReport alloc] init];
-    SHDReporterViewController *viewController = [[SHDReporterViewController alloc] initWithNibName:nil bundle:nil bugReport:newBug];
+    SHDReporterSpecificDatasource * datasource = self.reporter.reporterSpecificDatasource;
+    SHDReporterViewController *viewController = [[SHDReporterViewController alloc] initWithNibName:nil bundle:nil bugReport:newBug datasource:datasource];
+    
     UIViewController *root = [[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController];
     UIViewController *presented = root;
     while (presented.presentedViewController) {
         presented = presented.presentedViewController;
     }
-    
     if ([presented isMemberOfClass:[SHDReporterViewController class]] == NO) {
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         navController.modalPresentationStyle = UIModalPresentationFormSheet;

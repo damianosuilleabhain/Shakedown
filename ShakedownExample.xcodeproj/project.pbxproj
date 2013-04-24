@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		3DF55F99172681CB00E97C8A /* NSURLResponse+Shakedown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */; };
 		3DF55F9B17269DF400E97C8A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DF55F9A17269DF400E97C8A /* README.md */; };
-		3DF55FA11726C50300E97C8A /* SHDRedmineAdditionalDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55FA01726C50200E97C8A /* SHDRedmineAdditionalDatasource.m */; };
+		3DF55FA11726C50300E97C8A /* SHDRedmineSpecificDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55FA01726C50200E97C8A /* SHDRedmineSpecificDatasource.m */; };
+		3DF55FB617282E9500E97C8A /* SHDReporterSpecificDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55FB517282E9400E97C8A /* SHDReporterSpecificDatasource.m */; };
 		3DFF296017253285003CA2AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF295F17253285003CA2AB /* UIKit.framework */; };
 		3DFF296217253285003CA2AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF296117253285003CA2AB /* Foundation.framework */; };
 		3DFF296417253285003CA2AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFF296317253285003CA2AB /* CoreGraphics.framework */; };
@@ -62,8 +63,10 @@
 		3DF55F97172681CB00E97C8A /* NSURLResponse+Shakedown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Shakedown.h"; sourceTree = "<group>"; };
 		3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Shakedown.m"; sourceTree = "<group>"; };
 		3DF55F9A17269DF400E97C8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		3DF55F9F1726C50100E97C8A /* SHDRedmineAdditionalDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDRedmineAdditionalDatasource.h; sourceTree = "<group>"; };
-		3DF55FA01726C50200E97C8A /* SHDRedmineAdditionalDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDRedmineAdditionalDatasource.m; sourceTree = "<group>"; };
+		3DF55F9F1726C50100E97C8A /* SHDRedmineSpecificDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDRedmineSpecificDatasource.h; sourceTree = "<group>"; };
+		3DF55FA01726C50200E97C8A /* SHDRedmineSpecificDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDRedmineSpecificDatasource.m; sourceTree = "<group>"; };
+		3DF55FB417282E9300E97C8A /* SHDReporterSpecificDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDReporterSpecificDatasource.h; sourceTree = "<group>"; };
+		3DF55FB517282E9400E97C8A /* SHDReporterSpecificDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDReporterSpecificDatasource.m; sourceTree = "<group>"; };
 		3DFF295C17253285003CA2AB /* ShakedownExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakedownExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFF295F17253285003CA2AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3DFF296117253285003CA2AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF55FB317282CBF00E97C8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF29AB172532B3003CA2AB /* SHDReporterView.h */,
+				3DFF29AC172532B3003CA2AB /* SHDReporterView.m */,
+				3DFF29A2172532B3003CA2AB /* SHDButton.h */,
+				3DFF29A3172532B3003CA2AB /* SHDButton.m */,
+				3DFF29A5172532B3003CA2AB /* SHDDescriptiveInfoCell.h */,
+				3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */,
+				3DFF29BB172532B3003CA2AB /* SHDTextFieldCell.h */,
+				3DFF29BC172532B3003CA2AB /* SHDTextFieldCell.m */,
+				3DFF29BD172532B3003CA2AB /* SHDTextViewCell.h */,
+				3DFF29BE172532B3003CA2AB /* SHDTextViewCell.m */,
+				3DFF29A7172532B3003CA2AB /* SHDListCell.h */,
+				3DFF29A8172532B3003CA2AB /* SHDListCell.m */,
+				3DFF29A9172532B3003CA2AB /* SHDMultipleSelectionCell.h */,
+				3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */,
+				3DFF29AF172532B3003CA2AB /* SHDScreenshotsCell.h */,
+				3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		3DFF295317253285003CA2AB = {
 			isa = PBXGroup;
 			children = (
@@ -238,28 +264,13 @@
 				3DFF29A4172532B3003CA2AB /* SHDConstants.h */,
 				3DFF29AD172532B3003CA2AB /* SHDReporterViewController.h */,
 				3DFF29AE172532B3003CA2AB /* SHDReporterViewController.m */,
-				3DFF29AB172532B3003CA2AB /* SHDReporterView.h */,
-				3DFF29AC172532B3003CA2AB /* SHDReporterView.m */,
 				3DFF29BF172532B3003CA2AB /* UIWindow+SHDShakeListener.h */,
 				3DFF29C0172532B3003CA2AB /* UIWindow+SHDShakeListener.m */,
-				3DFF29A2172532B3003CA2AB /* SHDButton.h */,
-				3DFF29A3172532B3003CA2AB /* SHDButton.m */,
-				3DFF29A5172532B3003CA2AB /* SHDDescriptiveInfoCell.h */,
-				3DFF29A6172532B3003CA2AB /* SHDDescriptiveInfoCell.m */,
-				3DFF29BB172532B3003CA2AB /* SHDTextFieldCell.h */,
-				3DFF29BC172532B3003CA2AB /* SHDTextFieldCell.m */,
-				3DFF29BD172532B3003CA2AB /* SHDTextViewCell.h */,
-				3DFF29BE172532B3003CA2AB /* SHDTextViewCell.m */,
-				3DFF29A7172532B3003CA2AB /* SHDListCell.h */,
-				3DFF29A8172532B3003CA2AB /* SHDListCell.m */,
-				3DFF29A9172532B3003CA2AB /* SHDMultipleSelectionCell.h */,
-				3DFF29AA172532B3003CA2AB /* SHDMultipleSelectionCell.m */,
-				3DFF29AF172532B3003CA2AB /* SHDScreenshotsCell.h */,
-				3DFF29B0172532B3003CA2AB /* SHDScreenshotsCell.m */,
-				3DFF29B1172532B3003CA2AB /* SHDShakedown+Private.h */,
-				3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */,
+				3DF55FB317282CBF00E97C8A /* Views */,
 				3DFF29B3172532B3003CA2AB /* SHDShakedown.h */,
 				3DFF29B4172532B3003CA2AB /* SHDShakedown.m */,
+				3DFF29B1172532B3003CA2AB /* SHDShakedown+Private.h */,
+				3DFF29B2172532B3003CA2AB /* SHDShakedown+Private.m */,
 				3DFF29A0172532B3003CA2AB /* SHDBugReport.h */,
 				3DFF29A1172532B3003CA2AB /* SHDBugReport.m */,
 				3DFF29B7172532B3003CA2AB /* SHDShakedownReporter.h */,
@@ -270,8 +281,10 @@
 				3DFF29BA172532B3003CA2AB /* SHDShakedownYouTrackReporter.m */,
 				3DFF29D517253885003CA2AB /* SHDShakedownRedmineReporter.h */,
 				3DFF29D617253886003CA2AB /* SHDShakedownRedmineReporter.m */,
-				3DF55F9F1726C50100E97C8A /* SHDRedmineAdditionalDatasource.h */,
-				3DF55FA01726C50200E97C8A /* SHDRedmineAdditionalDatasource.m */,
+				3DF55FB417282E9300E97C8A /* SHDReporterSpecificDatasource.h */,
+				3DF55FB517282E9400E97C8A /* SHDReporterSpecificDatasource.m */,
+				3DF55F9F1726C50100E97C8A /* SHDRedmineSpecificDatasource.h */,
+				3DF55FA01726C50200E97C8A /* SHDRedmineSpecificDatasource.m */,
 				3DF55F97172681CB00E97C8A /* NSURLResponse+Shakedown.h */,
 				3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */,
 			);
@@ -413,7 +426,8 @@
 				3DFF29D2172532B3003CA2AB /* UIWindow+SHDShakeListener.m in Sources */,
 				3DFF29D717253887003CA2AB /* SHDShakedownRedmineReporter.m in Sources */,
 				3DF55F99172681CB00E97C8A /* NSURLResponse+Shakedown.m in Sources */,
-				3DF55FA11726C50300E97C8A /* SHDRedmineAdditionalDatasource.m in Sources */,
+				3DF55FA11726C50300E97C8A /* SHDRedmineSpecificDatasource.m in Sources */,
+				3DF55FB617282E9500E97C8A /* SHDReporterSpecificDatasource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

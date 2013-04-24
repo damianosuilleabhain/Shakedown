@@ -15,7 +15,7 @@
 #import "SHDScreenshotsCell.h"
 #import "SHDDescriptiveInfoCell.h"
 #import "SHDListCell.h"
-#import "SHDRedmineAdditionalDatasource.h"
+#import "SHDRedmineSpecificDatasource.h"
 
 #define IS_IPHONE UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone
 #define IS_WIDESCREEN UIScreen.mainScreen.bounds.size.height == 568

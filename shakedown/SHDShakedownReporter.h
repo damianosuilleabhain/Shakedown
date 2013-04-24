@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SHDBugReport.h"
 
+@class SHDReporterSpecificDatasource;
+
 @protocol  SHDShakedownReporterDelegate <NSObject>
 
 - (void)shakedownFailedToFileBug:(NSString *)message;
@@ -21,9 +23,11 @@
 
 @property (nonatomic, weak) id <SHDShakedownReporterDelegate> delegate;
 @property (nonatomic, readonly) UIViewController *topViewController;
+@property (nonatomic, strong) SHDReporterSpecificDatasource * reporterSpecificDatasource;
 
 - (void)reportBug:(SHDBugReport *)bugReport;
 
 - (NSData *)httpBodyDataForDictionary:(NSDictionary *)dictionary boundary:(NSString *)boundary;
+
 
 @end

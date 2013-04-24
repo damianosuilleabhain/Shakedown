@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHDReporterSpecificDatasource.h"
 
 @class SHDBugReport;
 
 @interface SHDReporterViewController : UIViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bugReport:(SHDBugReport *)bugReport;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil bugReport:(SHDBugReport *)bugReport datasource:(SHDReporterSpecificDatasource *)datasource;
 
 @end

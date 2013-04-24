@@ -22,7 +22,7 @@
 
 #warning Redmine issue properties
 
-@property (nonatomic, assign) NSInteger trackerId;
+@property (nonatomic, assign) NSString *issueTracker;
 @property (nonatomic, assign) NSInteger statusId;
 @property (nonatomic, assign) NSInteger categoryId;
 

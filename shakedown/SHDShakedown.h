@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SHDReporterSpecificDatasource.h"
 
 @class SHDShakedownReporter;
 @class SHDReporterViewController;
