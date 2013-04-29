@@ -11,7 +11,6 @@
 
 @interface SHDRedmineSpecificDatasource : SHDReporterSpecificDatasource
 
-@property (nonatomic, assign) BOOL trackersLoadingRequestFailed;
 - (NSInteger)issueTrackerIdForName:(NSString *)name;
 
 @end

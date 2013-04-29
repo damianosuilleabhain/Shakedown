@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D92FA86172E5B2D00E5F9BB /* NSString+Shakedown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D92FA85172E5B2D00E5F9BB /* NSString+Shakedown.m */; };
 		3DF55F99172681CB00E97C8A /* NSURLResponse+Shakedown.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */; };
 		3DF55F9B17269DF400E97C8A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DF55F9A17269DF400E97C8A /* README.md */; };
 		3DF55FA11726C50300E97C8A /* SHDRedmineSpecificDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55FA01726C50200E97C8A /* SHDRedmineSpecificDatasource.m */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D92FA84172E5B2D00E5F9BB /* NSString+Shakedown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Shakedown.h"; sourceTree = "<group>"; };
+		3D92FA85172E5B2D00E5F9BB /* NSString+Shakedown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Shakedown.m"; sourceTree = "<group>"; };
 		3DF55F97172681CB00E97C8A /* NSURLResponse+Shakedown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLResponse+Shakedown.h"; sourceTree = "<group>"; };
 		3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLResponse+Shakedown.m"; sourceTree = "<group>"; };
 		3DF55F9A17269DF400E97C8A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				3DF55FB517282E9400E97C8A /* SHDReporterSpecificDatasource.m */,
 				3DF55F9F1726C50100E97C8A /* SHDRedmineSpecificDatasource.h */,
 				3DF55FA01726C50200E97C8A /* SHDRedmineSpecificDatasource.m */,
+				3D92FA84172E5B2D00E5F9BB /* NSString+Shakedown.h */,
+				3D92FA85172E5B2D00E5F9BB /* NSString+Shakedown.m */,
 				3DF55F97172681CB00E97C8A /* NSURLResponse+Shakedown.h */,
 				3DF55F98172681CB00E97C8A /* NSURLResponse+Shakedown.m */,
 			);
@@ -428,6 +433,7 @@
 				3DF55F99172681CB00E97C8A /* NSURLResponse+Shakedown.m in Sources */,
 				3DF55FA11726C50300E97C8A /* SHDRedmineSpecificDatasource.m in Sources */,
 				3DF55FB617282E9500E97C8A /* SHDReporterSpecificDatasource.m in Sources */,
+				3D92FA86172E5B2D00E5F9BB /* NSString+Shakedown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

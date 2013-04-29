@@ -69,7 +69,8 @@ NSString * redmineApiKeyHeaderKey = @"X-Redmine-API-Key";
     NSMutableDictionary * issueInfoDictionary = [NSMutableDictionary dictionary];
     if (bugReport.issueTracker.length) {
         SHDRedmineSpecificDatasource * datasource = (id)self.reporterSpecificDatasource;
-        [issueInfoDictionary setObject:@([datasource issueTrackerIdForName:bugReport.issueTracker]) forKey:@"tracker_id"];
+        NSInteger trackerId = [datasource issueTrackerIdForName:bugReport.issueTracker];
+        if (trackerId != NSNotFound) [issueInfoDictionary setObject:@(trackerId) forKey:@"tracker_id"];
     }
     if (bugReport.statusId > 0) [issueInfoDictionary setObject:@(bugReport.statusId) forKey:@"status_id"];
     if (bugReport.title.length > 0) [issueInfoDictionary setObject:bugReport.title forKey:@"subject"];
